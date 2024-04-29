@@ -53,6 +53,7 @@ public class userController {
             Usuario.setConfirmarContrasena(UsuarioUpdate.getConfirmarContrasena());
             Usuario.setTelefono(UsuarioUpdate.getTelefono());
             Usuario.setRol(UsuarioUpdate.getRol());
+            Usuario.setEstado(UsuarioUpdate.getEstado());
            
           
             usuarioService.save(Usuario);
