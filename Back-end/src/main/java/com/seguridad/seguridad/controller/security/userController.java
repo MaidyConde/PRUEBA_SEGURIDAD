@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.seguridad.seguridad.interfaceService.IusuarioService;
 import com.seguridad.seguridad.models.Usuario;
 
-@RequestMapping("/api/v1/Usuario/")
+@RequestMapping("/api/v1/public/usuario/")
 @RestController
 public class userController {
 
@@ -48,9 +48,9 @@ public class userController {
 
             Usuario.setPrimerNombre(UsuarioUpdate.getPrimerNombre());
             Usuario.setPrimerApellido(UsuarioUpdate.getPrimerApellido());
-            Usuario.setCorreoElectrónicoUnico(UsuarioUpdate.getCorreoElectrónicoUnico());
-            Usuario.setContraseña(UsuarioUpdate.getContraseña());
-            Usuario.setConfirmarContraseña(UsuarioUpdate.getConfirmarContraseña());
+            Usuario.setCorreoElectronicoUnico(UsuarioUpdate.getCorreoElectronicoUnico());
+            Usuario.setContrasena(UsuarioUpdate.getContrasena());
+            Usuario.setConfirmarContrasena(UsuarioUpdate.getConfirmarContrasena());
             Usuario.setTelefono(UsuarioUpdate.getTelefono());
             Usuario.setRol(UsuarioUpdate.getRol());
            

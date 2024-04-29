@@ -10,20 +10,23 @@ import jakarta.persistence.Id;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "idUsuario", nullable = false, length = 36)
+    private String idUsuario ;
+
     @Column(name = "primerNombre", nullable = false, length = 36)
     private String primerNombre;
  
     @Column(name = "primerApellido", nullable = false, length = 36)
     private String primerApellido;
 
-    @Column(name = "correoElectrónicoUnico", nullable = false, length = 100)
-    private String correoElectrónicoUnico;
+    @Column(name = "correoElectronicoUnico", nullable = false, length = 100)
+    private String correoElectronicoUnico;
 
-    @Column(name = "Contraseña", nullable = false, length = 100)
-    private String Contraseña;
+    @Column(name = "Contrasena", nullable = false, length = 100)
+    private String Contrasena;
 
-    @Column(name = "confirmarContraseña", nullable = false, length = 100)
-    private String confirmarContraseña;
+    @Column(name = "confirmarContrasena", nullable = false, length = 100)
+    private String confirmarContrasena;
 
     @Column(name = "Telefono", nullable = false, length = 11)
     private String Telefono;
@@ -34,15 +37,24 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String primerNombre, String primerApellido, String correoElectrónicoUnico, String contraseña,
-            String confirmarContraseña, String telefono, String rol) {
+    public Usuario(String idUsuario, String primerNombre, String primerApellido, String correoElectronicoUnico,
+            String contrasena, String confirmarContrasena, String telefono, String rol) {
+        this.idUsuario = idUsuario;
         this.primerNombre = primerNombre;
         this.primerApellido = primerApellido;
-        this.correoElectrónicoUnico = correoElectrónicoUnico;
-        Contraseña = contraseña;
-        this.confirmarContraseña = confirmarContraseña;
+        this.correoElectronicoUnico = correoElectronicoUnico;
+        Contrasena = contrasena;
+        this.confirmarContrasena = confirmarContrasena;
         Telefono = telefono;
         Rol = rol;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getPrimerNombre() {
@@ -61,28 +73,28 @@ public class Usuario {
         this.primerApellido = primerApellido;
     }
 
-    public String getCorreoElectrónicoUnico() {
-        return correoElectrónicoUnico;
+    public String getCorreoElectronicoUnico() {
+        return correoElectronicoUnico;
     }
 
-    public void setCorreoElectrónicoUnico(String correoElectrónicoUnico) {
-        this.correoElectrónicoUnico = correoElectrónicoUnico;
+    public void setCorreoElectronicoUnico(String correoElectronicoUnico) {
+        this.correoElectronicoUnico = correoElectronicoUnico;
     }
 
-    public String getContraseña() {
-        return Contraseña;
+    public String getContrasena() {
+        return Contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        Contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        Contrasena = contrasena;
     }
 
-    public String getConfirmarContraseña() {
-        return confirmarContraseña;
+    public String getConfirmarContrasena() {
+        return confirmarContrasena;
     }
 
-    public void setConfirmarContraseña(String confirmarContraseña) {
-        this.confirmarContraseña = confirmarContraseña;
+    public void setConfirmarContrasena(String confirmarContrasena) {
+        this.confirmarContrasena = confirmarContrasena;
     }
 
     public String getTelefono() {
@@ -100,7 +112,7 @@ public class Usuario {
     public void setRol(String rol) {
         Rol = rol;
     }
-
     
 
+   
 }

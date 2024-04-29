@@ -27,7 +27,7 @@ public class securityConfig {
         .authorizeHttpRequests(
             authpRequests->authpRequests
             //todas las peticiones que comiencen por ("/api/v1/public") van hacer permitidas sin restrincion del usuario
-            .requestMatchers("/api/v1/public/")
+            .requestMatchers("/api/v1/public/**")
             .permitAll()
             //para el resto de peticiones es requerido que se autentiquen
             .anyRequest().authenticated()
