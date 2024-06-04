@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,21 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.seguridad.seguridad.interfaceService.IusuarioService;
 import com.seguridad.seguridad.models.Usuario;
 
-@RequestMapping("/api/v1/public/usuario/")
+@RequestMapping("/api/v1/private/usuario/")
 @RestController
-public class userController {
-
+public class userPrivateController {
+    
     @Autowired
     private IusuarioService usuarioService;
 
-    @PostMapping("/")
-    public ResponseEntity<Object> save (@ModelAttribute("Usuario") Usuario Usuario) {
-        
-        usuarioService.save(Usuario);
-        return new ResponseEntity<>(Usuario, HttpStatus.OK);
-    }
-
-     @GetMapping("/")
+    @GetMapping("/")
     public ResponseEntity<Object> findAll() {
         var listaUsuario = usuarioService.findAll();
         return new ResponseEntity<>(listaUsuario, HttpStatus.OK);
